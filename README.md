@@ -11,9 +11,13 @@ The Following Code snipet will help you understand how to use this.
 // Import the module
 var Whereitgoes = require("whereitgoes");
 var whereitgoes = new Whereitgoes();
-
+async function run(){
 var json = await whereitgoes.getredirect("https://bit.ly/iamkunal9");
+console.log(json);
 // An object containing list of all the redirects
+}
+run()
+
 ```
 
 ## Documentation
