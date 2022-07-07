@@ -1,7 +1,7 @@
 {
   "name": "whereitgoes",
   "version": "0.1.1",
-  "description": "Get the atopsy of the url in json",
+  "description": "Get the autopsy of the url in json",
   "main": "index.js",
   "scripts": {
     "test": "echo \"working\""
@@ -9,17 +9,20 @@
   "funding": "https://www.buymeacoffee.com/Iamkunal9",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/iamkunal9/whereitgoes.git"
   },
   "keywords": [
-    "whereitgoes"
+    "whereitgoes",
+    "node",
+    "js",
+    "urlredirectcheck"
   ],
   "author": "iamkunal9",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/iamkunal9/whereitgoes/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/iamkunal9/whereitgoes#readme",
   "dependencies": {
     "request": "^2.88.2"
   }
