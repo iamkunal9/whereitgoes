@@ -17,6 +17,6 @@ jobs:
           scope: '@iamkunal9'
           
       - run: npm install
-      - run: npm publish
+      - run: npm publish --registry=https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
