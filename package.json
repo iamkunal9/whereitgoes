@@ -4,7 +4,7 @@
   "description": "Get the autopsy of the url in json",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"working\""
+    "test": "echo \"working\"",
   "publishConfigs":{
     "registry":"https://npm.pkg.github.com/@iamkunal9"
   },
