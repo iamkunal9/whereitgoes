@@ -17,5 +17,6 @@ jobs:
           scope: '@iamkunal9'
           
       - run: npm install
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
