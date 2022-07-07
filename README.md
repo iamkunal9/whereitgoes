@@ -26,7 +26,7 @@ run()
 ### Installation
 
 ```js
-comming soon !
+npm i whereitgoes
 ```
 
 
