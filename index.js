@@ -1,60 +1,46 @@
-var request = require('request');
-function sendRequest(u) {
+const request = require('request');
+
+async function sendRequest(u) {
   return new Promise((resolve, reject) => {
-    var reqbody;
-    var resp;
-      let options = {
-  method: 'head',
-  headers: {
-    'User-Agent': `Redirect Tester v1`,
-  },
-  followRedirect: false,
-  url: u,
-}
-    request(
-      options,
-      function(error, response, body) {
-        if (error) reject(error);
-        resp = response;
-        resolve(resp);
-      }
-    );
+    const options = {
+      method: 'head',
+      headers: {
+        'User-Agent': `Redirect Tester v1`,
+      },
+      followRedirect: false,
+      url: u,
+    };
+
+    request(options, function(error, response, body) {
+      if (error) reject(error);
+      resolve(response);
+    });
   });
 }
-module.exports = class Whereitgoes {
+
+class Whereitgoes {
   constructor() {}
 
-  
   async getredirect(url) {
-let u = url;
-  let data = [];
-  while (1==1){
-  const resp = await sendRequest(u).catch(err => console.log(err));
-  if (resp.statusCode === 301 || resp.statusCode === 302) {
-          data.push({
-            link: resp.headers.location,
-            status_code: resp.statusCode
-          });
-          u = resp.headers.location;
-      }
-      else{
-        data.push(
-          {
-            link: data.slice(-1)[0].link,
-            status_code: resp.statusCode
-          });
+    const data = [];
+    let u = url;
 
-        return data;
-       
+    while (true) {
+      const resp = await sendRequest(u).catch(err => console.log(err));
+      data.push({
+        link: u,
+        status_code: resp.statusCode
+      });
 
-         
-        
-        // return "update";
-
+      if (resp.statusCode === 301 || resp.statusCode === 302) {
+        u = resp.headers.location;
+      } else {
+        break;
       }
     }
-}
-  }
-  
-  
 
+    return data;
+  }
+}
+
+module.exports = Whereitgoes;
